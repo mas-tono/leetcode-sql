@@ -6,7 +6,7 @@
         -- In the query, the LEFT JOIN uses the condition f.country = a.country, which fails for rows where country is NULL because NULL = NULL is not true in SQL.
         -- Solution:
 
-        -- To handle this issue, we need to explicitly treat NULL values in the country column as matching each other. You can modify the JOIN condition using COALESCE to replace NULL with a string like 'abc' for comparison.
+        -- To handle this issue, we need to explicitly treat NULL values in the country column as matching each other. We can modify the JOIN condition using COALESCE to replace NULL with a string like 'abc' for comparison.
 
 -- use coalesce to change null to something else: 'abc'
 -- in final query, use 'nullif' to change 'abc' back to null
